@@ -4,7 +4,7 @@
         <div class="card-body">
             <h5 class="card-title"><?php echo $listing["title"] ?></h5> <!--pour avoir une syntaxe plus courte on peut faire ?= $listing["title"] -->
             <p class="card-text"><?php echo $listing["price"] ?> €</p>
-            <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+            <a href="/annonce.php?id=<?php echo $key ?>" class="btn btn-primary stretched-link w-100">Voir l'annonce</a>
         </div>
     </div>
 </div>
