@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -24,9 +28,16 @@
                 <li><a href="/annonces.php" class="nav-link px-2">Annonces</a></li>
             </ul>
 
-            <div class="col-md-3 text-end">
-                <a class="btn btn-outline-primary me-2" href="/connexion.php">Connexion</a>
-                <a class="btn btn-primary" href="/inscription.php">Inscription</a>
+            <div class="col-md-4 text-end">
+                <?php if (isset($_SESSION["user"])): ?>
+
+                    <span>Bonjour <?= $_SESSION["user"]["username"]; ?></span>
+                    <a class="btn btn-outline-primary me-2" href="/deconnexion.php">Deconnexion</a>
+
+                <?php else: ?>
+                    <a class="btn btn-outline-primary me-2" href="/connexion.php">Connexion</a>
+                    <a class="btn btn-primary" href="/inscription.php">Inscription</a>
+                <?php endif; ?>
             </div>
         </header>
 
